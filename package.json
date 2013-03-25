@@ -1,0 +1,14 @@
+{
+  "author": "DIY Co. <https://diy.org>",
+  "name": "super-simple-server",
+  "description": "DIY Simple Server Example for Backend Dev Skill",
+  "homepage": "http://bedev.herokuapp.com/challenge/2",
+  "version": "0.0.1",
+  "dependencies": {
+  },
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "0.6.20"
+  }
+}

@@ -1,0 +1,118 @@
+<html>
+     <!-- the head tag holds information and resources for the page -->
+    <head>
+        <!-- the title tag holds the page title -->
+        <!-- comments inside of HTML start and end like this -->
+        <title>Hello WWW!</title>
+    </head>
+
+    <style>
+        /* comments in CSS start and end with astricks and slashes */
+        /* changing background color and the margin (spacing) between the edges and our content */
+        body {
+            background: #E5EB4B; 
+            margin: 30px;
+        }
+
+        /* changing the font, size and color of first level headers */
+        h1 {
+            font-family: Arial, sans-serif; 
+            font-size: 38px; 
+            color: #fff;
+        }
+
+        /* changing font and color of paragraph text*/
+        p {
+            font-family: Georgia, serif; 
+            color: #7E8119;
+        }
+
+        /* put some space on top of the image and tell the different browsers what kind of animatin to do */
+        .paw { 
+            margin-top: 20px;
+            -webkit-animation: rotation 2s linear infinite; 
+            -moz-animation: rotation 2s linear infinite; 
+            -ms-animation: rotation 2s linear infinite;
+        }
+
+        /* explain for bowsers how much to rotate in the animation */
+        @-webkit-keyframes rotation {
+            0%   { -webkit-transform: rotate(0deg); }
+            100% { -webkit-transform: rotate(360deg); }
+        }
+        @-moz-keyframes rotation {
+            0%   { -moz-transform: rotate(0deg); }
+            100% { -moz-transform: rotate(360deg); }
+        }
+        @-ms-keyframes rotation {
+            0%   { -ms-transform: rotate(0deg); }
+            100% { -ms-transform: rotate(360deg); }
+        }
+        textarea {
+            width: 40px;
+        }
+
+        #calculator-box {
+            background: #00D4B1; width: 300px; padding: 20px;
+        }
+
+        #revealAnswer {
+            font-family: Georgia, serif; 
+            font-size: 40px; 
+            color: #fff;
+        }
+
+        .calc-text {
+            font-family: Arial, sans-serif; 
+            text-transform: uppercase; 
+            font-size: 14px; 
+            font-weight: bold; 
+            color: #E5EB4B; 
+            margin-top: -3px;
+        }
+    </style>
+    
+    <!-- the body tag holds the main content of the page -->
+    <body>
+        <!-- the h1 tag is the highest level (first) of headers which are titles with larger font sizes -->
+        <h1>How to Keep it Real!</h1>
+        <!-- the p tag creates paragraphs -->
+        <p>First, you don't sweat the small stuff. Second, smile and be kind!</p>
+        <!-- the img tag let's display an image by pointing to the source (src), or its location on the internet  -->
+
+        <div id="calculator-box">
+            <textarea id="one"></textarea><span class="calc-text"> multiplied by</span> <textarea id="two"></textarea> <button id="multiply-button" onclick="multiplyNumbers()">Multiply!</button>
+            <h2 id="revealAnswer"></h2>
+        </div>
+
+        <img class="paw" src="https://d10yyh63llk3uw.cloudfront.net/images/www/logo/60x63.png" />
+
+        <script>
+        // Comments in Javascript start with two slashes
+        // This function takes a list of colors and picks one at random
+        // These colors are called 'hex colors' and are the values for colors on the web
+        function randomColor() {
+            var sick_neon_colors = ["#CB3301", "#FF0066", "#FF6666", "#FEFF99", "#FFFF67", "#CCFF66", "#99FE00", "#EC8EED", "#FF99CB", "#FE349A", "#CC99FE", "#6599FF", "#03CDFF"];
+            return sick_neon_colors[Math.floor(Math.random()*sick_neon_colors.length)];
+        };
+
+        // This function takes the random color and makes it the background of the page
+        function changeColors() {
+            document.body.style.background = randomColor(); 
+
+        }
+
+        // We can 'comment out' the changing colors so it won't run and make our eyes crazy while we build other things!
+        // This function tells the page to run the changeColors function every 2 seconds
+        // window.onload = setInterval(changeColors, 200);
+
+        function multiplyNumbers() {
+            var input1 = document.getElementById("one").value;
+            var input2 = document.getElementById("two").value;
+            var answer = input1 * input2;
+            document.getElementById("revealAnswer").innerHTML = answer;
+            return answer
+        }
+        </script>
+    </body>
+</html>
