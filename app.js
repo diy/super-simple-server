@@ -6,15 +6,18 @@
  */
 
 
-/**
- * Dependencies
- */
+// Dependencies
 var fs      = require('fs'),
 		http    = require('http');
 
-/**
- * Server
- */
-http.createServer(function (request, response) {fs.createReadStream(__dirname + '/index.html').pipe(response);}).listen(3000);
-
+// What to do when our server gets a request
+function requestHandler (request, response) {
+    var fileLocation    = __dirname + '/index.html';
+    var fileStream      = fs.createReadStream(fileLocation)
+    fileStream.pipe(response);
+}
+// Create the server
+var server = http.createServer(requestHandler);
+// Tell the server to start listening for requests
+server.listen(3000);
 console.log('Listening on port 3000');
