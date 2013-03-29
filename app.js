@@ -19,5 +19,8 @@ function requestHandler (request, response) {
 // Create the server
 var server = http.createServer(requestHandler);
 // Tell the server to start listening for requests
-server.listen(3000);
+var port = process.env.PORT || 3000;
+server.listen(port);
 console.log('Listening on port 3000');
+
+
