@@ -7,6 +7,7 @@
 
 
 // Dependencies
+// These are Node.js core modules we'll be using
 var fs      = require('fs'),
 		http    = require('http');
 
